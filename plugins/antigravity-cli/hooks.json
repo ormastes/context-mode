@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command|view_file|grep_search|web_fetch|read_url_content",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "context-mode hook antigravity-cli pretooluse",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "context-mode hook antigravity-cli posttooluse",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "context-mode hook antigravity-cli stop",
+        "timeout": 30
+      }
+    ]
+  }
+}
